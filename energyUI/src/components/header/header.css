@@ -1,0 +1,16 @@
+.toolbar {
+    height: '40px';
+    flex-grow: 1;
+    box-shadow: 'none';
+    background-color: 'white';
+}
+
+.buttonGroup {
+    margin-left: 88%;
+    display: 'flex';
+    flex-direction: 'colunn';
+}
+
+.button {
+    color: 'black'
+}

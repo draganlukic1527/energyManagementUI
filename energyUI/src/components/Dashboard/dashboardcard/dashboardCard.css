@@ -1,0 +1,29 @@
+.dashboard-header {
+    width: 85vw;
+    height: 20px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 5%;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-list {
+    width: 85vw;
+    height: 200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.chart-card {
+      margin-top: 20px !important;
+      width: 85vw;
+      margin: 0 auto;
+      display: grid;
+      grid-gap: 20px;
+      height: 450px;
+}
