@@ -1,29 +1,41 @@
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10rem 10rem 10rem;
+
+}
+
 .dashboard-header {
-    width: 85vw;
     height: 20px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    margin-top: 5%;
     text-align: left;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
+.button-group {
+    padding: 0;
+    border: 1px solid black;
+    margin-bottom: 2rem;
+    align-items: flex-end;
+    align-self: flex-end;
+}
+
 .card-list {
-    width: 85vw;
-    height: 200px;
+    width: 100%;
+    height: 12.5rem;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 1.25rem;
 }
 
 .chart-card {
-      margin-top: 20px !important;
-      width: 85vw;
-      margin: 0 auto;
-      display: grid;
-      grid-gap: 20px;
-      height: 450px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 3rem;
 }
