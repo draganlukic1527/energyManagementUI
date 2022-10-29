@@ -1,0 +1,72 @@
+.login-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1.5rem 10rem 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+  width: 30%;
+  height: min-content;
+  font-family: 'Mulish';
+}
+
+.card-content {
+  min-width: 70%;
+  padding: 0px;
+}
+
+.card-title {
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
+  margin-bottom: 2rem;
+  color: #9fa2b4;
+}
+
+.card-parent-title {
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-field-title {
+  width: fit-content;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  color: #9fa2b4;
+}
+
+.text-field {
+  padding: 0px;
+  width: 100%;
+  border-color: #f0f1f7;
+}
+
+.text-field input {
+  padding: 10px;
+  border-radius: 25px;
+  background-color: #fcfdfe;
+}
+
+.label-content {
+}
+
+.card-submit {
+  margin-top: 2rem;
+  width: 100%;
+  background-color: #3751ff;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+}
+
+.card-sign-up {
+  color: #9fa2b4;
+  margin-bottom: 2rem;
+}
+
+.sign-up-text {
+  color: #3751ff;
+}
