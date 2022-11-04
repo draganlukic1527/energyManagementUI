@@ -6,6 +6,9 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import TextField from '@mui/material/TextField';
 import PropTypes from 'prop-types';
+import Popover from '@mui/material/Popover';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
 const bull = (
   <Box
@@ -30,21 +33,37 @@ async function loginUser(credentials: any) {
 export default function LoginPage({ setToken }: any, customToken?: any) {
   console.log('CUSTOM', customToken);
   if (customToken.length > 0) {
-    console.log('CUSTOM', customToken);
     setToken(customToken);
   }
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
 
+  let token: any = null;
+  let shouldHideNoUserPopover: boolean = false;
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const token = await loginUser({
+    token = await loginUser({
       EmailAddress: username,
       PasswordHash: password,
     });
-    console.log('TOKEN: ', token);
+
+    if (!token?.UserID) {
+      shouldHideNoUserPopover = true;
+    }
     setToken(token);
   };
+
+  const handleClick = (event: any) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const open = Boolean(anchorEl) && shouldHideNoUserPopover;
+  const id = open ? 'simple-popover' : undefined;
 
   return (
     <Card sx={{ minWidth: 400 }} className="login-card">
@@ -72,10 +91,30 @@ export default function LoginPage({ setToken }: any, customToken?: any) {
               onChange={(e: any) => setPassword(e.target.value)}
             />
           </label>
-          <div>
-            <button className="card-submit" type="submit">
+          <div className="card-bottom">
+            <Button
+              className="card-submit"
+              type="submit"
+              variant="contained"
+              onClick={handleClick}
+              aria-describedby={id}
+            >
               Log In
-            </button>
+            </Button>
+            <Popover
+              id={id}
+              open={open}
+              anchorEl={anchorEl}
+              onClose={handleClose}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+            >
+              <Typography sx={{ p: 2 }}>
+                User email or password does not exist
+              </Typography>
+            </Popover>
           </div>
         </form>
       </CardContent>
