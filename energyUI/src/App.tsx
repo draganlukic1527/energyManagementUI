@@ -7,17 +7,30 @@ import React, { Component, useState } from 'react';
 import '@fontsource/mulish';
 import useToken from './useToken';
 
+export interface ILoginProp {
+  userData: any;
+}
+
 function App() {
   const { token, setToken } = useToken();
 
+  let loginProp: ILoginProp = {
+    userData: {},
+  };
+
   console.log('token app:', token);
-  if (!token) {
+  if (!token?.UserID) {
     return <LoginPage setToken={setToken} />;
   }
   if (token) {
+    loginProp = {
+      userData: token,
+    };
+
+    console.log('Token Login:', token);
     return (
       <div className="App">
-        <Header setToken={setToken}></Header>
+        <Header setToken={setToken} userData={loginProp.userData}></Header>
         <DashboardCard></DashboardCard>
       </div>
     );
@@ -38,7 +51,10 @@ function App() {
           path="/"
           element={
             <div className="App">
-              <Header setToken={setToken}></Header>
+              <Header
+                setToken={setToken}
+                userData={loginProp.userData}
+              ></Header>
               <DashboardCard></DashboardCard>
             </div>
           }
