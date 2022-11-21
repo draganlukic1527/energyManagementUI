@@ -3,41 +3,19 @@ import { ChartCard } from '../chartcard/chartCard';
 import './dashboardCard.css';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/Button';
-import { useState } from 'react';
-import { getTextOfJSDocComment } from 'typescript';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Carousel, {
   CarouselItem,
 } from '../../sharedComponents/carousel/carousel';
 
-export interface IEnergyData {
-  price: string;
-  savings: string;
-  data: {
-    labels: string[];
-    datasets: [
-      {
-        label: string;
-        fill: boolean;
-        lineTension: number;
-        backgroundColor: string;
-        borderColor: string;
-        borderWidth: number;
-        data: number[];
-      }
-    ];
-  };
-}
+import {
+  IChartData,
+  ICarouselData,
+} from '../../../interfaces/chartData.interface';
+import { IUserData } from '../../../interfaces/userData.interface';
 
-export interface IEnergySavings {
-  id: number;
-  title: string;
-  description: string;
-}
-
-const energyData: IEnergyData[] = [
+const energyData: IChartData[] = [
   {
     price: '$306.20',
     savings: '1.3%',
@@ -152,36 +130,15 @@ const energyData: IEnergyData[] = [
   },
 ];
 
-const energySavingsInformation: IEnergySavings[] = [
-  {
-    id: 0,
-    title: 'reduce energy consumption',
-    description: 'turn off lights between 5-9pm',
-  },
-  {
-    id: 1,
-    title: 'Change laundry time',
-    description: 'Perform laundry past 9pm',
-  },
-  {
-    id: 2,
-    title: 'reduce water consumption',
-    description: 'Turn on sprinklers at night',
-  },
-];
-
-interface MyProps {}
+interface MyProps {
+  userData: IUserData;
+}
 
 interface MyState {
   index: number;
 }
 
-export interface carouselData {
-  children: string;
-  width?: any;
-}
-
-const carouselItem: carouselData[] = [
+const carouselItem: ICarouselData[] = [
   {
     children: 'item1',
     width: '100%',
@@ -197,7 +154,8 @@ const carouselItem: carouselData[] = [
 ];
 
 export default class DashboardCard extends React.Component<MyProps, MyState> {
-  constructor(props: IEnergyData) {
+  constructor(props: any) {
+    console.log('DASH PROPS:', props);
     super(props);
     this.state = {
       index: 0,

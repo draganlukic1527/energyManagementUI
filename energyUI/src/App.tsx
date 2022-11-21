@@ -31,7 +31,7 @@ function App() {
     return (
       <div className="App">
         <Header setToken={setToken} userData={loginProp.userData}></Header>
-        <DashboardCard></DashboardCard>
+        <DashboardCard userData={loginProp.userData}></DashboardCard>
       </div>
     );
   }
@@ -55,7 +55,7 @@ function App() {
                 setToken={setToken}
                 userData={loginProp.userData}
               ></Header>
-              <DashboardCard></DashboardCard>
+              <DashboardCard userData={loginProp.userData} />
             </div>
           }
         />
