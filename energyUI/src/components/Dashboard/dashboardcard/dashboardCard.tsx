@@ -15,120 +15,8 @@ import {
 } from '../../../interfaces/chartData.interface';
 import { IUserData } from '../../../interfaces/userData.interface';
 
-const energyData: IChartData[] = [
-  {
-    price: '$306.20',
-    savings: '1.3%',
-    data: {
-      labels: [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec',
-      ],
-      datasets: [
-        {
-          label: '',
-          fill: false,
-          lineTension: 0.5,
-          backgroundColor: 'rgba(75,192,192,1)',
-          borderColor: 'rgba(0,0,0,1)',
-          borderWidth: 2,
-          data: [65, 59, 80, 81, 56, 71, 62, 81, 78, 68, 72, 71],
-        },
-      ],
-    },
-  },
-  {
-    price: '$108.10',
-    savings: '1.3%',
-    data: {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-      datasets: [
-        {
-          label: '',
-          fill: false,
-          lineTension: 0.5,
-          backgroundColor: 'rgba(75,192,192,1)',
-          borderColor: 'rgba(0,0,0,1)',
-          borderWidth: 2,
-          data: [65, 59, 80, 81, 56, 71],
-        },
-      ],
-    },
-  },
-  {
-    price: '$306.20',
-    savings: '1.3%',
-    data: {
-      labels: [
-        'Jan 1',
-        'Jan 15',
-        'Jan 31',
-        'Feb 1',
-        'Feb 28',
-        'Mar 1',
-        'Mar 15',
-        'Mar 30',
-      ],
-      datasets: [
-        {
-          label: '',
-          fill: false,
-          lineTension: 0.5,
-          backgroundColor: 'rgba(75,192,192,1)',
-          borderColor: 'rgba(0,0,0,1)',
-          borderWidth: 2,
-          data: [65, 72, 63, 59, 68, 62, 72, 80],
-        },
-      ],
-    },
-  },
-  {
-    price: '$306.20',
-    savings: '1.3%',
-    data: {
-      labels: ['Jan 1', 'Jan 6', 'Jan 12', 'Jan 18', 'Jan 24', 'Jan 31'],
-      datasets: [
-        {
-          label: '',
-          fill: false,
-          lineTension: 0.5,
-          backgroundColor: 'rgba(75,192,192,1)',
-          borderColor: 'rgba(0,0,0,1)',
-          borderWidth: 2,
-          data: [65, 59, 80, 81, 56, 71, 62],
-        },
-      ],
-    },
-  },
-  {
-    price: '$306.20',
-    savings: '1.3%',
-    data: {
-      labels: ['Mon', 'Tues', 'Wed', 'Th', 'Fri', 'Sat', 'Sun'],
-      datasets: [
-        {
-          label: '',
-          fill: false,
-          lineTension: 0.5,
-          backgroundColor: 'rgba(75,192,192,1)',
-          borderColor: 'rgba(0,0,0,1)',
-          borderWidth: 2,
-          data: [65, 59, 80, 81, 56, 71, 62],
-        },
-      ],
-    },
-  },
-];
+import { convertEnergyDataToChartsData } from '../../../utils';
+import { IEnergyData } from '../../../interfaces/energyData.interface';
 
 interface MyProps {
   userData: IUserData;
@@ -162,6 +50,11 @@ export default class DashboardCard extends React.Component<MyProps, MyState> {
     };
 
     this.parentToChild = this.parentToChild.bind(this);
+
+    console.log(
+      'ENERGYDATA:',
+      this.getEnergyData(this.props.userData.EnergyData)
+    );
   }
 
   parentToChild(index: number) {
@@ -170,13 +63,16 @@ export default class DashboardCard extends React.Component<MyProps, MyState> {
     });
   }
 
+  getEnergyData(energyDatas: IEnergyData[]): IChartData[] {
+    return convertEnergyDataToChartsData(energyDatas);
+  }
+
   render() {
     return (
       <div className="Dashboard">
         <div className="dashboard-header">
           <div className="button-group">
             <ButtonGroup size="small" aria-label="small button group">
-              <Button onClick={() => this.parentToChild(4)}>1W</Button>
               <Button onClick={() => this.parentToChild(3)}>1M</Button>
               <Button onClick={() => this.parentToChild(2)}>3M</Button>
               <Button onClick={() => this.parentToChild(1)}>6M</Button>
@@ -189,7 +85,11 @@ export default class DashboardCard extends React.Component<MyProps, MyState> {
             <div className="content">
               <div className="chart-card">
                 <ChartCard
-                  energy={energyData[this.state.index]}
+                  energy={
+                    this.getEnergyData(this.props.userData.EnergyData)[
+                      this.state.index
+                    ]
+                  }
                   shouldShowChart="true"
                 />
               </div>
@@ -221,8 +121,4 @@ export default class DashboardCard extends React.Component<MyProps, MyState> {
       </div>
     );
   }
-}
-
-function setData(energyData: any) {
-  throw new Error('Function not implemented.');
 }

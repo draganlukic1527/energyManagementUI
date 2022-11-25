@@ -3,21 +3,21 @@ export interface IChartData {
   savings: string;
   data: {
     labels: string[];
-    datasets: [
-      {
-        label: string;
-        fill: boolean;
-        lineTension: number;
-        backgroundColor: string;
-        borderColor: string;
-        borderWidth: number;
-        data: number[];
-      }
-    ];
+    datasets: IChartDataSet[];
   };
 }
 
 export interface ICarouselData {
   children: string;
   width: string;
+}
+
+export interface IChartDataSet {
+  label: string;
+  fill: boolean;
+  lineTension: number;
+  backgroundColor: string;
+  borderColor: string;
+  borderWidth: number;
+  data: number[];
 }

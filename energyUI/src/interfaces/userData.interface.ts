@@ -3,7 +3,7 @@ import { IEnergyData } from './energyData.interface';
 export interface IUserData {
   City: string;
   EmailAddress: string;
-  EnergyData: IEnergyData;
+  EnergyData: IEnergyData[];
   EnergyProvider: string;
   FirstName: string;
   LastLogin: string;
