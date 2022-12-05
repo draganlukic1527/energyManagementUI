@@ -13,6 +13,7 @@
 
 .dashboard-header {
   display: flex;
+  justify-content: center;
   margin-top: 2rem;
 }
 
@@ -31,8 +32,10 @@
   flex-flow: column;
 }
 
+.header-price {
+}
+
 .button-group {
-  display: flex;
   padding: 0px;
   border: 2px solid black;
   margin-left: auto;
@@ -69,7 +72,7 @@ Button {
   min-height: 250px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 1.25rem;
   margin-top: 1rem;
 }

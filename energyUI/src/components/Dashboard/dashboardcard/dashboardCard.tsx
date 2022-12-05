@@ -41,6 +41,9 @@ const carouselItem: ICarouselData[] = [
   },
 ];
 
+let selectedIndex: number = 0;
+let userEnergyData: IChartData[];
+
 export default class DashboardCard extends React.Component<MyProps, MyState> {
   constructor(props: any) {
     console.log('DASH PROPS:', props);
@@ -58,6 +61,7 @@ export default class DashboardCard extends React.Component<MyProps, MyState> {
   }
 
   parentToChild(index: number) {
+    selectedIndex = index;
     this.setState({
       index: index,
     });
@@ -71,6 +75,14 @@ export default class DashboardCard extends React.Component<MyProps, MyState> {
     return (
       <div className="Dashboard">
         <div className="dashboard-header">
+          <strong className="header-price">
+            <span>Total Cost: </span>
+            {
+              this.getEnergyData(this.props.userData.EnergyData)[
+                this.state.index
+              ].price
+            }
+          </strong>
           <div className="button-group">
             <ButtonGroup size="small" aria-label="small button group">
               <Button onClick={() => this.parentToChild(3)}>1M</Button>
@@ -98,23 +110,24 @@ export default class DashboardCard extends React.Component<MyProps, MyState> {
         </Card>
 
         <div className="card-list">
-          <Card className="card-lidt-card">
-            <CardContent>
-              <p>Energy Use: 24kwh</p>
-            </CardContent>
-          </Card>
-
           <div>
             <Carousel>
-              <CarouselItem>Item 1</CarouselItem>
-              <CarouselItem>Item 2</CarouselItem>
-              <CarouselItem>Item 3</CarouselItem>
+              <CarouselItem>Wash Your Laundry Past 9:00 p.m</CarouselItem>
+              <CarouselItem>
+                Turn on your AC/Heating before peak hours
+              </CarouselItem>
+              <CarouselItem>
+                Turn off your lights before you leave a room
+              </CarouselItem>
             </Carousel>
           </div>
 
           <Card className="card-lidt-card">
             <CardContent>
-              <p>Energy Use: 24kwh</p>
+              <strong>Average Total Usage Per Area: 24kwh Last Month</strong>
+
+              <div>Your Total Usage: 59kwh Last Month</div>
+              <div></div>
             </CardContent>
           </Card>
         </div>
