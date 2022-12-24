@@ -110,8 +110,28 @@ export default class DashboardCard extends React.Component<MyProps, MyState> {
         </Card>
 
         <div className="card-list">
+          <Card className="card">
+            <CardContent>
+              <div className="cardContent">
+                <strong style={{ fontSize: 'xxx-large' }}>59kwh</strong>
+                <div>Your Total Usage Last Month</div>
+                <div></div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="card">
+            <CardContent>
+              <div className="cardContent">
+                <strong style={{ fontSize: 'xxx-large' }}>24kwh</strong>
+                <div>Average Total Usage Per Area</div>
+                <div></div>
+              </div>
+            </CardContent>
+          </Card>
+
           <div>
-            <Carousel>
+            {/* <Carousel>
               <CarouselItem>Wash Your Laundry Past 9:00 p.m</CarouselItem>
               <CarouselItem>
                 Turn on your AC/Heating before peak hours
@@ -119,17 +139,8 @@ export default class DashboardCard extends React.Component<MyProps, MyState> {
               <CarouselItem>
                 Turn off your lights before you leave a room
               </CarouselItem>
-            </Carousel>
+            </Carousel> */}
           </div>
-
-          <Card className="card-lidt-card">
-            <CardContent>
-              <strong>Average Total Usage Per Area: 24kwh Last Month</strong>
-
-              <div>Your Total Usage: 59kwh Last Month</div>
-              <div></div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     );

@@ -51,7 +51,7 @@ const Carousel = (data: carouselData) => {
   return (
     <div
       {...handlers}
-      className="carousel MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root card-lidt-card css-bhp9pd-MuiPaper-root-MuiCard-root"
+      className="carousel MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root card css-bhp9pd-MuiPaper-root-MuiCard-root"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >

@@ -77,10 +77,11 @@ Button {
   margin-top: 1rem;
 }
 
-.card-lidt-card {
-  width: 100%;
-  margin: 0 auto;
-  padding-bottom: 3rem;
-  margin: 0px;
-  height: 100%;
+.card {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.cardContent {
 }
