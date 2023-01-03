@@ -1,50 +1,33 @@
 import React from 'react';
 import './chartCard.css';
-import {Line} from 'react-chartjs-2';
-import { ChartOptions } from 'chart.js/auto';
-
-function shouldShowChart (props: any) {
-  if (!props.shouldShowChart) {
-    return null;
-  }      
-}
-
-type lineChart = {
-  energy: any,
-  options: any,
-}
+import { Line } from 'react-chartjs-2';
 
 const options: any = {
   scales: {
     x: {
       grid: {
-        display: false
-      }    },
+        display: false,
+      },
+    },
     y: {
       grid: {
-        display: false
-      }    }
+        display: false,
+      },
+    },
   },
   plugins: {
     legend: {
-        display: false
+      display: false,
     },
   },
-  tooltips:{
-    enabled:false
+  tooltips: {
+    enabled: false,
   },
-  hover: {mode: null},
-}
-
+  hover: { mode: null },
+};
 
 export const ChartCard = (props: any) => (
-  <div className='card-container'>
-    <Line
-      type="line"
-      data = {props.energy?.data}
-      options = {options}
-      height = { 80 }
-      
-    /> 
-</div>
-); 
+  <div className="card-container">
+    <Line type="line" data={props.energy?.data} options={options} height={80} />
+  </div>
+);

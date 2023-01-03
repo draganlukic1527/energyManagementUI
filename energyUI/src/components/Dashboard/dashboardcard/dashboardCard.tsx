@@ -5,9 +5,6 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Carousel, {
-  CarouselItem,
-} from '../../sharedComponents/carousel/carousel';
 
 import {
   IChartData,
@@ -26,23 +23,7 @@ interface MyState {
   index: number;
 }
 
-const carouselItem: ICarouselData[] = [
-  {
-    children: 'item1',
-    width: '100%',
-  },
-  {
-    children: 'item2',
-    width: '100%',
-  },
-  {
-    children: 'item3',
-    width: '100%',
-  },
-];
-
 let selectedIndex: number = 0;
-let userEnergyData: IChartData[];
 
 export default class DashboardCard extends React.Component<MyProps, MyState> {
   constructor(props: any) {
@@ -129,18 +110,6 @@ export default class DashboardCard extends React.Component<MyProps, MyState> {
               </div>
             </CardContent>
           </Card>
-
-          <div>
-            {/* <Carousel>
-              <CarouselItem>Wash Your Laundry Past 9:00 p.m</CarouselItem>
-              <CarouselItem>
-                Turn on your AC/Heating before peak hours
-              </CarouselItem>
-              <CarouselItem>
-                Turn off your lights before you leave a room
-              </CarouselItem>
-            </Carousel> */}
-          </div>
         </div>
       </div>
     );
