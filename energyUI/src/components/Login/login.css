@@ -13,7 +13,7 @@
 }
 
 .card-content {
-  min-width: 70%;
+  min-width: 80%;
   padding: 0px;
 }
 
@@ -26,6 +26,7 @@
 }
 
 .card-parent-title {
+  width: max-content;
   margin-left: auto;
   margin-right: auto;
 }

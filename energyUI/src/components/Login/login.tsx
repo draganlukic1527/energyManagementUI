@@ -68,7 +68,7 @@ export default function LoginPage({ setToken }: any, customToken?: any) {
   return (
     <Card sx={{ minWidth: 400 }} className="login-card">
       <CardContent className="card-content">
-        <h1>Energy Management Dashboard</h1>
+        <h1 className="card-parent-title">Energy Management Dashboard</h1>
         <p className="card-title">Enter your email and password below</p>
         <form onSubmit={handleSubmit}>
           <label className="label-content">
