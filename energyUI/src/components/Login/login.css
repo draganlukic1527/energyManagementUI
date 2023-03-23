@@ -1,4 +1,5 @@
 .login-card {
+  min-width: 520px !important;
   display: flex;
   flex-direction: column;
   align-items: center;
