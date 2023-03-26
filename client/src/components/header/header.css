@@ -1,0 +1,29 @@
+.toolbar {}
+
+.toolbar-content {
+    display: flex;
+    margin-left: auto;
+    grid-gap: 1.25rem;
+    justify-content: end;
+}
+
+.title-text {
+    font-family: 'Mulish';
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.welcome-text {
+    font-family: 'Mulish';
+    font-weight: 500;
+    margin-left: 10px;
+}
+ 
+.break-line {
+    border-left: 1px solid #DFE0EB;
+    height: 20px;
+  }
+
+.icon {
+    border: none;
+}
