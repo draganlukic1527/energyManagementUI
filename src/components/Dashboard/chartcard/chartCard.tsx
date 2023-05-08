@@ -29,6 +29,13 @@ const options: any = {
 // CHECK:
 export const ChartCard = (props: any) => (
   <div className="card-container">
-    {/* <Line type="line" data={props.energy?.data} options={options} height={80} /> */}
+    {
+      <Line
+        type="line"
+        data={props.energy?.data}
+        options={options}
+        height={80}
+      />
+    }
   </div>
 );
