@@ -1,7 +1,5 @@
-import { IUserData } from './interfaces/userData.interface';
 import { IChartData } from './interfaces/chartData.interface';
 import { IEnergyData } from './interfaces/energyData.interface';
-import { time } from 'console';
 
 const monthNames = [
   'January',
