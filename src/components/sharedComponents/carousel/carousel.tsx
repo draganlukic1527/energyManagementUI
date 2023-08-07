@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import './carousel.css';
+import './carousel.scss';
 
 export interface carouselData {
   children: any;

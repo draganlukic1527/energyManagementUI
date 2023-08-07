@@ -1,15 +1,12 @@
 import React from 'react';
 import { ChartCard } from '../chartcard/chartCard';
-import './dashboardCard.css';
+import './dashboardCard.scss';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
-import {
-  IChartData,
-  ICarouselData,
-} from '../../../interfaces/chartData.interface';
+import { IChartData } from '../../../interfaces/chartData.interface';
 import { IUserData } from '../../../interfaces/userData.interface';
 
 import { convertEnergyDataToChartsData } from '../../../utils';

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import './dropdown.css';
+import './dropdown.scss';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useDetectOutsideClick } from '../../../useDetectOutsideClick';
 

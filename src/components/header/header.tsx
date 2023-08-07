@@ -1,11 +1,10 @@
 import React from 'react';
-import './header.css';
+import './header.scss';
 import Toolbar from '@material-ui/core/Toolbar';
 import DropDownMenu from './dropdown/dropdown';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
 export default function Header(prop: any) {
-  console.log('HEADER:', prop, 'CHECK:', prop.userData);
   return (
     <Toolbar className="toolbar">
       <h2 className="title-text">Energy Use Overview</h2>

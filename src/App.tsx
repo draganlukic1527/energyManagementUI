@@ -1,5 +1,5 @@
-import './App.css';
-import LoginPage from './components/Login/login';
+import './App.scss';
+import LoginPage from './components/LoginPage/loginPage';
 import Header from './components/header/header';
 import DashboardCard from './components/Dashboard/dashboardcard/dashboardCard';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';

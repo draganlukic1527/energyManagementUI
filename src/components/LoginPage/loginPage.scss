@@ -1,3 +1,25 @@
+.login-page {
+}
+.login-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-end;
+  height: fit-content;
+  font-weight: bold;
+  font-family: 'Mulish';
+  padding: 0 1rem;
+  font-size: 1rem;
+
+  a {
+    margin-right: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+}
+
 .login-card {
   min-width: 520px !important;
   display: flex;
@@ -67,6 +89,10 @@
 .card-sign-up {
   color: #9fa2b4;
   margin-bottom: 2rem;
+
+  :hover {
+    cursor: pointer;
+  }
 }
 
 .sign-up-text {
