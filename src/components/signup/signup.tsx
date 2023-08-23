@@ -27,11 +27,46 @@ function Signup(props: any) {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
+    console.log(e);
+    const userCredentials = {
+      EmailAddress: username,
+      PasswordHash: password,
+      EnergyProvider: energyProvider,
+      FirstName: fullName,
+      MiddleName: null,
+      LastName: fullName,
+      RegisteredDate: null,
+      LastLogin: null,
+      StreetAddress: streetAddress,
+      Zip: zipCode,
+      City: city,
+      State: state,
+    };
+
+    const newUser = await signUp(userCredentials);
+
+    if (newUser?.uid) {
+      console.log('Hello User: ', newUser?.uid);
+    }
   };
 
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
+
+  async function signUp(credentials: any) {
+    console.log('Credentials:', credentials);
+    return await fetch('http://localhost:8080/user', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(credentials),
+    })
+      .then(data => data.json())
+      .catch(error => console.log('ERROR:', error));
+  }
 
   return (
     <div className="modal">
@@ -158,7 +193,7 @@ function Signup(props: any) {
               variant="contained"
               onClick={handleClick}
             >
-              Log In
+              Sign Up!
             </Button>
           </div>
         </form>
