@@ -1,24 +1,15 @@
 .card-container {
-    background-color: white;
-    border: 1px solid white;
-    border-radius: 5px;
-    cursor: pointer;
-    -moz-osx-font-smoothing: grayscale;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    transition: transform 0.25s ease-out;
-  }
-  
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
 
-  .card-text {
-    display: grid;
-    grid-template-columns: 1fr;
-    text-align: left;
-  }
-  p {
-      margin: 0px
-  }
-  h2 {
-    margin: 0px
-
-  }
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  margin: 0px;
+}

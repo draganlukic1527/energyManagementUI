@@ -1,29 +1,36 @@
-.toolbar {}
+.toolbar {
+  display: flex;
 
-.toolbar-content {
-    display: flex;
-    margin-left: auto;
-    grid-gap: 1.25rem;
-    justify-content: end;
-}
-
-.title-text {
+  .title-text {
     font-family: 'Mulish';
     font-weight: bold;
-    margin-left: 10px;
-}
+    white-space: nowrap;
 
-.welcome-text {
-    font-family: 'Mulish';
-    font-weight: 500;
-    margin-left: 10px;
-}
- 
-.break-line {
-    border-left: 1px solid #DFE0EB;
-    height: 20px;
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
-.icon {
-    border: none;
+  .toolbar-content {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    grid-gap: 0.5rem;
+
+    @media (max-width: 767px) {
+      margin-top: 1rem;
+    }
+
+    .welcome-text {
+      font-family: 'Mulish';
+      font-weight: 500;
+      margin-left: 10px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .icon {
+      border: none;
+    }
+  }
 }

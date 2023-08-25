@@ -71,19 +71,15 @@ export default class DashboardCard extends React.Component<MyProps, MyState> {
           </div>
         </div>
         <Card className="card-dashboard">
-          <CardContent>
-            <div className="content">
-              <div className="chart-card">
-                <ChartCard
-                  energy={
-                    this.getEnergyData(this.props.userData.EnergyData)[
-                      this.state.index
-                    ]
-                  }
-                  shouldShowChart="true"
-                />
-              </div>
-            </div>
+          <CardContent sx={{ height: '100%' }}>
+            <ChartCard
+              energy={
+                this.getEnergyData(this.props.userData.EnergyData)[
+                  this.state.index
+                ]
+              }
+              shouldShowChart="true"
+            />
           </CardContent>
         </Card>
 

@@ -3,9 +3,14 @@ import './chartCard.scss';
 import { Line } from 'react-chartjs-2';
 
 const options: any = {
+  responsive: true,
+  maintainAspectRatio: false,
   scales: {
     x: {
       grid: {
+        display: false,
+      },
+      ticks: {
         display: false,
       },
     },
@@ -26,16 +31,8 @@ const options: any = {
   hover: { mode: null },
 };
 
-// CHECK:
 export const ChartCard = (props: any) => (
   <div className="card-container">
-    {
-      <Line
-        type="line"
-        data={props.energy?.data}
-        options={options}
-        height={80}
-      />
-    }
+    {<Line type="line" data={props.energy?.data} options={options} />}
   </div>
 );

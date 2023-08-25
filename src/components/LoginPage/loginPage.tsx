@@ -10,6 +10,7 @@ import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { MdArrowDropDown } from 'react-icons/md';
+import { SlMenu } from 'react-icons/sl';
 import Signup from '../signup/signup';
 
 const bull = (

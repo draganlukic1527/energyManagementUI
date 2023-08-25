@@ -1,6 +1,10 @@
 .login-page {
 }
 .login-header {
+  @media (max-width: 767px) {
+    display: none;
+  }
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -68,7 +72,6 @@
 
 .text-field input {
   padding: 10px;
-  border-radius: 25px;
   background-color: #fcfdfe;
 }
 

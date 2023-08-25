@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import PropTypes from 'prop-types';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
+import { SlClose } from 'react-icons/sl';
 import Button from '@mui/material/Button';
 
 function Signup(props: any) {
@@ -197,9 +198,9 @@ function Signup(props: any) {
             </Button>
           </div>
         </form>
-        <button className="close-modal" onClick={toggleModal}>
-          CLOSE
-        </button>
+        <span className="close-modal" onClick={toggleModal}>
+          <SlClose />
+        </span>
       </div>
     </div>
   );
